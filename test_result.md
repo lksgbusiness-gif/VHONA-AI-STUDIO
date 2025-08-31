@@ -245,11 +245,7 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus:
-    - "AI LLM Integration for Content Generation"
-    - "AI Image Generation for Flyers"
-    - "Content Generation API Endpoints"
-    - "Emergent Authentication Integration"
+  current_focus: []
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
