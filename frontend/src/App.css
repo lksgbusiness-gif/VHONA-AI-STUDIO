@@ -1,34 +1,252 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9fafb;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.App {
+  min-height: 100vh;
 }
 
-.App-link {
-    color: #61dafb;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Animation for loading */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Custom gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-purple-blue {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Content cards styling */
+.content-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.content-card:hover {
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Form styling */
+.form-input {
+  @apply w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors duration-200;
+}
+
+.btn-danger {
+  @apply bg-red-100 hover:bg-red-200 text-red-600 px-4 py-2 rounded-lg transition-colors duration-200;
+}
+
+/* Tab styles */
+.tab-button {
+  @apply px-6 py-3 rounded-lg font-medium transition-colors duration-200 cursor-pointer;
+}
+
+.tab-button.active {
+  @apply bg-purple-600 text-white;
+}
+
+.tab-button.inactive {
+  @apply bg-white text-gray-700 hover:bg-gray-50;
+}
+
+/* Content type cards */
+.content-type-card {
+  @apply p-3 rounded-lg text-center transition-all duration-200 hover:scale-105;
+}
+
+.content-type-card.social {
+  @apply bg-purple-50 text-purple-800;
+}
+
+.content-type-card.flyer {
+  @apply bg-blue-50 text-blue-800;
+}
+
+.content-type-card.radio {
+  @apply bg-green-50 text-green-800;
+}
+
+.content-type-card.marketing {
+  @apply bg-orange-50 text-orange-800;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .grid-responsive {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Loading states */
+.loading-spinner {
+  @apply animate-spin rounded-full border-b-2 border-purple-600;
+}
+
+/* Typography */
+.heading-primary {
+  @apply text-3xl font-bold text-gray-800 mb-2;
+}
+
+.heading-secondary {
+  @apply text-2xl font-bold text-gray-800 mb-4;
+}
+
+.text-muted {
+  @apply text-gray-600;
+}
+
+/* Content display */
+.content-preview {
+  @apply bg-gray-50 p-4 rounded-lg font-medium text-gray-800;
+}
+
+.content-preview pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Image styles */
+.generated-image {
+  @apply w-full max-w-md mx-auto rounded-lg shadow-md;
+}
+
+.profile-image {
+  @apply w-8 h-8 rounded-full;
+}
+
+/* Navigation styles */
+.header-nav {
+  @apply bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg;
+}
+
+.nav-brand {
+  @apply flex items-center space-x-3;
+}
+
+.nav-logo {
+  @apply w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center;
+}
+
+/* Form validation styles */
+.form-error {
+  @apply text-red-600 text-sm mt-1;
+}
+
+.form-success {
+  @apply text-green-600 text-sm mt-1;
+}
+
+/* Card hover effects */
+.hover-lift {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Authentication pages */
+.auth-container {
+  @apply min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center;
+}
+
+.auth-card {
+  @apply bg-white rounded-2xl shadow-xl p-8 max-w-md w-full mx-4;
+}
+
+.auth-logo {
+  @apply w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4;
+}
+
+/* Feature grid */
+.feature-grid {
+  @apply grid grid-cols-2 gap-4 text-sm;
+}
+
+/* Status indicators */
+.status-online {
+  @apply w-3 h-3 bg-green-500 rounded-full;
+}
+
+.status-offline {
+  @apply w-3 h-3 bg-gray-400 rounded-full;
+}
+
+/* Utility classes */
+.text-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-custom {
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Animation delays for staggered effects */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
