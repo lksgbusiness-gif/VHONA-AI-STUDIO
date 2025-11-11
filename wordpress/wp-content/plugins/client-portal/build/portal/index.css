@@ -1,0 +1,284 @@
+:root {
+    --vhona-font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --vhona-accent: #2563eb;
+    --vhona-bg: #ffffff;
+    --vhona-muted: #6b7280;
+    --vhona-border: #e5e7eb;
+}
+
+#vhona-client-portal-app {
+    font-family: var(--vhona-font-family);
+    background: var(--vhona-bg);
+    color: #111827;
+    border: 1px solid var(--vhona-border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    max-width: 1200px;
+    margin: 32px auto;
+}
+
+.vhona-portal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.vhona-portal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.vhona-portal-user {
+    color: var(--vhona-muted);
+    font-size: 0.95rem;
+}
+
+.vhona-portal-logo {
+    max-height: 42px;
+    margin-top: 8px;
+}
+
+.vhona-tab-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.vhona-tab-button {
+    border: 1px solid var(--vhona-border);
+    background: #f9fafb;
+    color: #111827;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.vhona-tab-button:hover {
+    border-color: var(--vhona-accent);
+    color: var(--vhona-accent);
+}
+
+.vhona-tab-button.is-active {
+    background: var(--vhona-accent);
+    border-color: var(--vhona-accent);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.vhona-panel {
+    border: 1px solid var(--vhona-border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    background: #ffffff;
+}
+
+.vhona-panel h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.vhona-empty {
+    text-align: center;
+    color: var(--vhona-muted);
+    padding: 32px 0;
+}
+
+.vhona-list {
+    display: grid;
+    gap: 16px;
+}
+
+.vhona-list-item {
+    border: 1px solid var(--vhona-border);
+    border-radius: 12px;
+    padding: 16px;
+    background: #f9fafb;
+}
+
+.vhona-list-item h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+}
+
+.vhona-meta {
+    font-size: 0.85rem;
+    color: var(--vhona-muted);
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.vhona-actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.vhona-button {
+    background: var(--vhona-accent);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.vhona-button.secondary {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.vhona-button.danger {
+    background: #dc2626;
+}
+
+.vhona-button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+.vhona-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vhona-table th,
+.vhona-table td {
+    border-bottom: 1px solid var(--vhona-border);
+    text-align: left;
+    padding: 10px 8px;
+    font-size: 0.9rem;
+}
+
+.vhona-table tbody tr:hover {
+    background: #f3f4f6;
+}
+
+.vhona-form {
+    display: grid;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.vhona-form label {
+    display: grid;
+    gap: 4px;
+    font-size: 0.9rem;
+    color: #111827;
+}
+
+.vhona-form input,
+.vhona-form textarea,
+.vhona-form select {
+    border: 1px solid var(--vhona-border);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 0.95rem;
+}
+
+.vhona-toast-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: grid;
+    gap: 12px;
+    z-index: 9999;
+}
+
+.vhona-toast {
+    background: #111827;
+    color: #ffffff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.3);
+    min-width: 240px;
+}
+
+.vhona-toast.is-error {
+    background: #b91c1c;
+}
+
+.vhona-pill {
+    display: inline-block;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--vhona-accent);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.vhona-grid {
+    display: grid;
+    gap: 16px;
+}
+
+@media (min-width: 960px) {
+    .vhona-grid.two-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.vhona-analytics-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.vhona-analytics-card {
+    border: 1px solid var(--vhona-border);
+    border-radius: 12px;
+    padding: 16px;
+    background: #f9fafb;
+}
+
+.vhona-analytics-card h4 {
+    margin: 0 0 6px;
+    font-size: 0.95rem;
+}
+
+.vhona-messages {
+    margin-top: 12px;
+    border-top: 1px solid var(--vhona-border);
+    padding-top: 12px;
+    display: grid;
+    gap: 12px;
+}
+
+.vhona-message {
+    background: #f3f4f6;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.vhona-message time {
+    display: block;
+    color: var(--vhona-muted);
+    font-size: 0.8rem;
+    margin-top: 6px;
+}
+
+.vhona-error {
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid #fca5a5;
+    color: #991b1b;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.vhona-loading {
+    text-align: center;
+    padding: 32px;
+    color: var(--vhona-muted);
+}
